@@ -87,7 +87,7 @@ export default async function LeaderboardPage() {
 
   {/* Entries */}
   {submissions.map((submission, index) => (
-    <a href={submission.url || '#'} key={submission.id}>
+    <a href={submission.url || '#'} key={submission.id} target="_blank">
       <div
         className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-x-12 p-4 items-center border-b border-white/10 hover:bg-white/5 transition-colors"
       >

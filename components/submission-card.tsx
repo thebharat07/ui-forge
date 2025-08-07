@@ -63,7 +63,7 @@ export default function SubmissionCard({ submission, userId }: SubmissionCardPro
   return (
     <Card className="bg-black/40 backdrop-blur-sm border border-white/10 overflow-hidden">
       <CardHeader className="p-0">
-        <Link href={submission.url} className="relative h-48 w-full">
+        <Link href={submission.url} className="relative h-48 w-full" target="_blank">
           <Image
             src={submission.imageUrl || "/placeholder.svg?height=200&width=400"}
             alt={submission.creatorName}
