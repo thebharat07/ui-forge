@@ -1,0 +1,18 @@
+export interface Submission {
+  id: string
+
+  imageUrl: string
+  creatorId: string
+  creatorName: string
+  voteCount: number
+  hasVoted: boolean
+  url: string
+}
+
+export interface Vote {
+  id: string
+  userId: string
+  submissionId: string
+  createdAt: Date
+  submission: Submission
+}
