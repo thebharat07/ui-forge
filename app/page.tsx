@@ -162,7 +162,7 @@ export default async function Home() {
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Vote for your favorite UI elements</h1>
-          <p className="text-gray-300">You can vote for up to 3 different submissions. Choose wisely!</p>
+          <p className="text-gray-300">You can vote for up to 2 different submissions. Choose wisely!</p>
 
           <VotingStats userId={session.user?.id || "demo-user"} />
         </div>
