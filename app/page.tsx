@@ -145,6 +145,18 @@ export default async function Home() {
             </div>
           </div>
         </div>
+              <div className="flex md:hidden items-center space-x-8">
+                <Link href="/leaderboard">
+                  <Button variant="ghost" className="text-gray-400 hover:text-white">
+                    Leaderboard
+                  </Button>
+                </Link>
+                <Link href="/my-votes">
+                  <Button variant="ghost" className="text-gray-400 hover:text-white">
+                    My Votes
+                  </Button>
+                </Link>
+              </div>
       </nav>
 
       <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

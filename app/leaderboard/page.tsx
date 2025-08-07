@@ -76,58 +76,70 @@ export default async function LeaderboardPage() {
           <p className="text-gray-300">Current standings based on community votes</p>
         </div>
 
-        <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden">
-          <div className="grid grid-cols-12 p-4 border-b border-white/10 bg-purple-900/20 text-white font-medium">
-            <div className="col-span-1 text-center">#</div>
-            <div className="col-span-2">Preview</div>
-           
-            <div className="col-span-2">Creator</div>
-            <div className="col-span-2 text-center">Votes</div>
-          </div>
+<div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden">
+  {/* Header */}
+  <div className="hidden md:grid md:grid-cols-12 p-4 border-b border-white/10 bg-purple-900/20 text-white font-medium">
+    <div className="col-span-1 text-center">#</div>
+    <div className="col-span-2">Preview</div>
+    <div className="col-span-2">Creator</div>
+    <div className="col-span-2 text-center">Votes</div>
+  </div>
 
-          {submissions.map((submission, index) => (
-            <a href={submission.url || '#'}>
-            <div
-              key={submission.id}
-              className="grid grid-cols-12 gap-x-12 p-4 items-center border-b border-white/10 hover:bg-white/5 transition-colors"
-            >
-              <div className="col-span-1 text-center font-bold text-2xl text-gray-500">{index + 1}</div>
-              <div className="col-span-2">
-                <div className="relative h-16 w-full rounded-md overflow-hidden">
-                  <Image
-                    src={submission.imageUrl || "/placeholder.svg?height=64&width=128"}
-                    alt={submission.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="col-span-2 text-gray-300">{submission.creatorName}</div>
-              <div className="col-span-2 text-center">
-                <div className="inline-flex items-center gap-2 bg-purple-900/30 px-3 py-1 rounded-full">
-                  <span className="text-purple-400 font-bold">{submission.voteCount}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-purple-400"
-                  >
-                    <path d="M7 10v12" />
-                    <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            </a>
-          ))}
+  {/* Entries */}
+  {submissions.map((submission, index) => (
+    <a href={submission.url || '#'} key={submission.id}>
+      <div
+        className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-x-12 p-4 items-center border-b border-white/10 hover:bg-white/5 transition-colors"
+      >
+        {/* Rank */}
+        <div className="md:col-span-1 text-center font-bold text-2xl text-gray-500 md:text-left">
+          #{index + 1}
         </div>
+
+        {/* Preview Image */}
+        <div className="md:col-span-2">
+          <div className="relative h-40 md:h-16 w-full rounded-md overflow-hidden">
+            <Image
+              src={submission.imageUrl || "/placeholder.svg?height=64&width=128"}
+              alt={submission.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Creator */}
+        <div className="md:col-span-2 text-gray-300 text-sm md:text-base">
+          <span className="block md:hidden font-semibold text-white">Creator:</span>
+          {submission.creatorName}
+        </div>
+
+        {/* Votes */}
+        <div className="md:col-span-2 text-center md:text-left">
+          <div className="inline-flex items-center gap-2 bg-purple-900/30 px-3 py-1 rounded-full">
+            <span className="text-purple-400 font-bold">{submission.voteCount}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-purple-400"
+            >
+              <path d="M7 10v12" />
+              <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </a>
+  ))}
+</div>
+
       </main>
 
       {/* Footer */}
