@@ -76,8 +76,8 @@ export default async function MyVotesPage() {
         <div className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">My Votes</h1>
           <p className="text-gray-300">
-            You've used {votes.length} of 3 possible votes.
-            {votes.length < 3 && ` You can still vote for ${3 - votes.length} more submissions.`}
+            You've used {votes.length} of 2 possible votes.
+            {votes.length < 3 && ` You can still vote for ${2 - votes.length} more submissions.`}
           </p>
         </div>
 

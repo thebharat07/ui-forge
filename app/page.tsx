@@ -6,12 +6,14 @@ import SubmissionCard from "@/components/submission-card"
 import VotingStats from "@/components/voting-stats"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/lib/auth"
+import { pariticipants } from "@/lib/participants"
 
 export default async function Home() {
   let session = null
 
   try {
     session = await getServerSession(authOptions)
+    console.log(session)
   } catch (error) {
     console.log("Auth error:", error)
     // Continue without session for now
@@ -56,7 +58,7 @@ export default async function Home() {
               bg-purple-900/50 border border-purple-700/50 
               shadow-[0_0_30px_-5px_rgba(147,51,234,0.5)]"
             >
-              <div className="w-2 h-2 rounded-full bg-purple-400 mr-2" />
+              <div claCreated with v0ssName="w-2 h-2 rounded-full bg-purple-400 mr-2" />
               <span className="text-sm text-purple-300">Voting opens soon!</span>
             </div>
 
@@ -159,11 +161,48 @@ export default async function Home() {
               </div>
       </nav>
 
-      <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <main className="pt-24 pb-20 px-4 mt-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="mb-10">
+ <div className="bg-black/50 border border-white/20 rounded-xl p-6 mb-12 backdrop-blur-sm shadow-lg">
+  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Concept: Design and build an interactive "Daily Quote Generator"</h2>
+  <p className="text-gray-200 mb-6">with an in-page "favorites" feature that persists across browser sessions.</p>
+
+  <div className="space-y-6 text-white text-base leading-relaxed">
+    <div>
+      <h3 className="text-xl font-semibold text-purple-300">Requirements:</h3>
+
+      <h4 className="mt-4 font-semibold text-purple-200">HTML Structure:</h4>
+      <ul className="list-disc list-inside text-gray-100 ml-4">
+        <li>The page must have a clear heading (e.g., "Daily Dose of Wisdom").</li>
+        <li>There must be a designated area to display the quote and its author.</li>
+        <li>Include a "New Quote" button.</li>
+        <li>Include a "Save Quote" button that changes appearance when saved.</li>
+        <li>Create a section (e.g., sidebar or modal) for saved "Favorite Quotes" that toggles visibility.</li>
+      </ul>
+
+      <h4 className="mt-4 font-semibold text-purple-200">CSS Styling:</h4>
+      <ul className="list-disc list-inside text-gray-100 ml-4">
+        <li>The website must be visually appealing and responsive.</li>
+        <li>Use Flexbox or Grid for layout.</li>
+        <li>Style buttons with hover effects.</li>
+        <li>Implement smooth transitions for quotes and favorite section toggling.</li>
+        <li>"Save Quote" button must show toggle state (e.g., heart icon filled or outline).</li>
+      </ul>
+
+      <h4 className="mt-4 font-semibold text-purple-200">JavaScript Functionality:</h4>
+      <ul className="list-disc list-inside text-gray-100 ml-4">
+        <li>Display a random quote on load from an array of at least 10 quote objects.</li>
+        <li>Clicking "New Quote" must change to a different random quote.</li>
+        <li>Use localStorage to persist favorite quotes across sessions.</li>
+        <li>Quotes can be added to and removed from favorites.</li>
+        <li>"Save Quote" button should reflect if a quote is already saved.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Vote for your favorite UI elements</h1>
           <p className="text-gray-300">You can vote for up to 2 different submissions. Choose wisely!</p>
-
           <VotingStats userId={session.user?.id || "demo-user"} />
         </div>
 
