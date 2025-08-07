@@ -6,7 +6,7 @@ import SubmissionCard from "@/components/submission-card"
 import VotingStats from "@/components/voting-stats"
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "@/lib/auth"
-import { pariticipants } from "@/lib/participants"
+import { pariticipants, check } from "@/lib/participants"
 
 export default async function Home() {
   let session = null
@@ -205,7 +205,23 @@ export default async function Home() {
           <p className="text-gray-300">You can vote for up to 2 different submissions. Choose wisely!</p>
           <VotingStats userId={session.user?.id || "demo-user"} />
         </div>
+{(() => {
 
+  return !check(session.user?.email)  ? (
+    <Link href="/submissions">
+      <Button className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-md shadow-md transition duration-200">
+        Submit
+      </Button>
+    </Link>
+  ) : (
+    <Button
+      disabled
+      className="bg-gray-700 text-white font-semibold px-6 py-2 rounded-md shadow-md cursor-not-allowed"
+    >
+      Submitted
+    </Button>
+  );
+})()}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {submissions.map((submission) => (
             <a href={submission.url || '#'}>
