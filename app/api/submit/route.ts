@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     const buffer = Buffer.from(bytes);
 
     // Make sure images folder exists
-    const uploadDir = path.join(process.cwd(), "public", "images");
+    const uploadDir = path.join(process.cwd(), "/tmp", "images");
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     const filePath = path.join(uploadDir, fileName);
     fs.writeFileSync(filePath, buffer);
 
-    const imageUrl = `/images/${fileName}`;
+    const imageUrl = `/tmp/images/${fileName}`;
 
     // Store in DB
     const { submissions } = await getCollections();
