@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import type { Submission } from "@/lib/types"
 import { voteForSubmission, checkVote } from "@/lib/actions"
 import { toast } from "@/hooks/use-toast"
+import Link from "next/link"
 
 interface SubmissionCardProps {
   submission: Submission
@@ -62,14 +63,14 @@ export default function SubmissionCard({ submission, userId }: SubmissionCardPro
   return (
     <Card className="bg-black/40 backdrop-blur-sm border border-white/10 overflow-hidden">
       <CardHeader className="p-0">
-        <div className="relative h-48 w-full">
+        <Link href={submission.url} className="relative h-48 w-full">
           <Image
             src={submission.imageUrl || "/placeholder.svg?height=200&width=400"}
             alt={submission.creatorName}
             fill
             className="object-cover"
           />
-        </div>
+        </Link>
       </CardHeader>
       <CardContent className="p-4">
         <div className="flex items-center justify-between mb-2">

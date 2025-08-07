@@ -2,7 +2,6 @@ export interface Submission {
   id: string
 
   imageUrl: string
-  creatorId: string
   creatorName: string
   voteCount: number
   hasVoted: boolean
