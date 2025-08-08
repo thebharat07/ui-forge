@@ -45,7 +45,7 @@ export default function RemoveVoteButton({ voteId, userId }: RemoveVoteButtonPro
   }
 
   return (
-    <Button onClick={handleRemoveVote} disabled={isRemoving} variant="destructive" className="w-full">
+    <Button onClick={handleRemoveVote} disabled={true} variant="destructive" className="w-full">
       {isRemoving ? "Removing..." : "Remove vote"}
     </Button>
   )

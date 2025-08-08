@@ -105,7 +105,7 @@ export default function SubmissionCard({ submission, userId }: SubmissionCardPro
       <CardFooter className="p-4 pt-0">
         <Button
           onClick={handleVote}
-          disabled={isVoting || hasVoted}
+          disabled={true}
           className={`w-full ${
             hasVoted ? "bg-purple-900/50 text-white cursor-not-allowed" : "bg-purple-600 hover:bg-purple-700 text-white"
           }`}
