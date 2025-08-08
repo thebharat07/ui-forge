@@ -97,7 +97,7 @@ export default function SubmissionCard({ submission, userId }: SubmissionCardPro
       
         <div className="flex justify-between items-center text-sm text-gray-400">
           <span>By {submission.creatorName}</span>
-          <Link href={submission.githubUrl}>
+          <Link href={submission.githubUrl} target="_blank">
             <Github/>
           </Link>
         </div>
