@@ -59,7 +59,7 @@ export default async function Home() {
               shadow-[0_0_30px_-5px_rgba(147,51,234,0.5)]"
             >
               <div claCreated with v0ssName="w-2 h-2 rounded-full bg-purple-400 mr-2" />
-              <span className="text-sm text-purple-300">Voting opens soon!</span>
+              <span className="text-sm text-purple-300">Voting is open</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
