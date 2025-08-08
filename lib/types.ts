@@ -1,6 +1,6 @@
 export interface Submission {
   id: string
-
+  githubUrl: string
   imageUrl: string
   creatorName: string
   voteCount: number

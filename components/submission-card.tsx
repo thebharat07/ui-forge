@@ -8,6 +8,7 @@ import type { Submission } from "@/lib/types"
 import { voteForSubmission, checkVote } from "@/lib/actions"
 import { toast } from "@/hooks/use-toast"
 import Link from "next/link"
+import { Github } from "lucide-react"
 
 interface SubmissionCardProps {
   submission: Submission
@@ -94,8 +95,11 @@ export default function SubmissionCard({ submission, userId }: SubmissionCardPro
           </div>
         </div>
       
-        <div className="flex items-center text-sm text-gray-400">
+        <div className="flex justify-between items-center text-sm text-gray-400">
           <span>By {submission.creatorName}</span>
+          <Link href={submission.githubUrl}>
+            <Github/>
+          </Link>
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0">

@@ -84,7 +84,8 @@ export async function getSubmissions(): Promise<Submission[]> {
     creatorName: s.creatorName,
     voteCount: s.voteCount,
     hasvoted: s.hasvoted,
-    url: s.url
+    url: s.url,
+    githubUrl: s.githuburl,
   }));
 }
 
