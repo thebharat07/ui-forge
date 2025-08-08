@@ -59,7 +59,7 @@ export default async function Home() {
               shadow-[0_0_30px_-5px_rgba(147,51,234,0.5)]"
             >
               <div claCreated with v0ssName="w-2 h-2 rounded-full bg-purple-400 mr-2" />
-              <span className="text-sm text-purple-300">Voting is open</span>
+              <span className="text-sm text-purple-300">Voting ends soon!</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
@@ -114,14 +114,14 @@ export default async function Home() {
                 <span className="ml-2 text-white font-bold">UI FORGE</span>
               </Link>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="/leaderboard">
+                <Link href="/">
                   <Button variant="ghost" className="text-gray-400 hover:text-white">
                     Leaderboard
                   </Button>
                 </Link>
                 <Link href="/my-votes">
                   <Button variant="ghost" className="text-gray-400 hover:text-white">
-                    My Votes
+                    My VotesPreview
                   </Button>
                 </Link>
               </div>

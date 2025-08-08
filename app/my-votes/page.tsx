@@ -37,7 +37,7 @@ export default async function MyVotesPage() {
                 <span className="ml-2 text-white font-bold">UI FORGE</span>
               </Link>
               <div className="hidden md:flex items-center space-x-8">
-                <Link href="/leaderboard">
+                <Link href="/">
                   <Button variant="ghost" className="text-gray-400 hover:text-white">
                     Leaderboard
                   </Button>
